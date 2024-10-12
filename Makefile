@@ -1,5 +1,5 @@
 test:
-	python3 -m unittest discover
+	python3 runtests.py
 
 testc:
 	coverage run runtests.py
