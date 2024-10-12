@@ -1,16 +1,15 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import HttpResponsePermanentRedirect
 
 from .models import VanityUrl
 
 
 class VanityUrlsMiddleware:
+
     def __init__(self, get_response):
         self.get_response = get_response
-        # One-time configuration and initialization.
 
     def __call__(self, request):
-        # Code to be executed for each request before
-        # the view (and later middleware) are called.
 
         response = self.get_response(request)
 
@@ -23,6 +22,6 @@ class VanityUrlsMiddleware:
         try:
             vurl = VanityUrl.objects.get(vanity_url=req_path)
             return HttpResponsePermanentRedirect(vurl.target)
-        except:
+        except ObjectDoesNotExist:
             # return the original response unmolested
             return response
