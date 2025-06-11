@@ -5,4 +5,4 @@ from .models import VanityUrl
 @admin.register(VanityUrl)
 class VanityUrlAdmin(admin.ModelAdmin):
 
-    list_display = ['vanity_url', 'target']
+    list_display = ['vanity_url', 'target', 'code']
