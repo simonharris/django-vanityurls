@@ -6,7 +6,7 @@ testc:
 	coverage report -m
 
 lint:
-	pylint vanityurls
+	@pylint --ignore migrations vanityurls
 
 clean:
 	rm -rf dist

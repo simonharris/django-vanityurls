@@ -27,7 +27,3 @@ class VanityUrl(models.Model):
 
     class Meta:
         verbose_name = 'Vanity URL'
-
-
-    def get_code_display(self) -> str:
-        return self.code
