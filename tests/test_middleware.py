@@ -42,3 +42,10 @@ class MiddlewareTest(TestCase):
         response = self.middleware(self.request)
         self.assertEqual(response.status_code, 301)
         self.assertEqual(response.headers['Location'], '/longurl')
+
+    def test_specified_reponse_code(self):
+        self.request.path = '/threeoheight'
+        self.mock_response.status_code = 404
+        response = self.middleware(self.request)
+        self.assertEqual(response.status_code, 308)
+        self.assertEqual(response.headers['Location'], '/longurl')

@@ -4,7 +4,17 @@
       "pk":1,
       "fields":{
          "vanity_url": "/shorturl",
-         "target": "/longurl"
+         "target": "/longurl",
+         "code": 301
+        }
+   },
+   {
+      "model":"vanityurls.vanityurl",
+      "pk":2,
+      "fields":{
+         "vanity_url": "/threeoheight",
+         "target": "/longurl",
+         "code": 308
         }
    }
 ]

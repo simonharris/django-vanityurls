@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.http.response import HttpResponsePermanentRedirect
+from django.http.response import HttpResponseRedirect
 
 from .models import VanityUrl
 
@@ -21,7 +21,7 @@ class VanityUrlsMiddleware:
 
         try:
             vurl = VanityUrl.objects.get(vanity_url=req_path)
-            return HttpResponsePermanentRedirect(vurl.target)
+            return HttpResponseRedirect(vurl.target, status=vurl.code)
         except ObjectDoesNotExist:
             # return the original response unmolested
             return response
