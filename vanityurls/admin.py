@@ -13,3 +13,6 @@ class VanityUrlAdmin(admin.ModelAdmin):
 class VanityUrlAdmin(admin.ModelAdmin):
 
     list_display = ['vanity_url', 'target', 'code', 'category']
+    list_filter = ['code', 'category']
+    show_facets = admin.ShowFacets.ALWAYS
+    empty_value_display = 'Unassigned'
