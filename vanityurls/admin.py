@@ -4,7 +4,7 @@ from .models import Category, VanityUrl
 
 
 @admin.register(Category)
-class VanityUrlAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
 
     list_display = ['name']
 

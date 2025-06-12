@@ -9,7 +9,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class VanityUrl(models.Model):
@@ -32,7 +32,6 @@ class VanityUrl(models.Model):
                             choices=RESPONSE_CODES)
 
     category = models.ForeignKey(Category, null=True, on_delete=models.PROTECT)
-
 
     class Meta:
         verbose_name = 'Vanity URL'
