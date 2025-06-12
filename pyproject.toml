@@ -8,9 +8,9 @@ requires = [
 name = "django-vanityurls"
 version = "2.0"
 authors = [
-  { name="Simon Harding", email="djvanity@pointbeing.net" },
+  { name="Simon Harding", email="github@pointbeing.net" },
 ]
-description = "A Django vanityurls app"
+description = "A Django vanity URLs/internal redirects app"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
