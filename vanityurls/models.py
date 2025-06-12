@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Category(models.Model):
+
+    name = models.CharField(max_length=255, blank=False, null=False, unique=True)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+
+
 class VanityUrl(models.Model):
 
     RESPONSE_CODES = {
@@ -20,9 +31,7 @@ class VanityUrl(models.Model):
                             blank=False, null=False,
                             choices=RESPONSE_CODES)
 
-
-    def __str__(self):
-        return ''
+    category = models.ForeignKey(Category, null=True, on_delete=models.PROTECT)
 
 
     class Meta:
