@@ -5,11 +5,11 @@
 # -- Project information
 
 project = 'Django VanityURLs'
-copyright = '2024, Simon Harding'
+copyright = '2025, Simon Harding'
 author = 'Simon Harding <github@pointbeing.net>'
 
-release = '0.1'
-version = '0.1.0'
+release = '2.0'
+version = '2.0.0'
 
 # -- General configuration
 

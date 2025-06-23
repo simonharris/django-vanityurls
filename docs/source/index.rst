@@ -13,7 +13,7 @@ By way of an example, if your website has a lengthy URL, say *example.org/compli
 How It Works
 ============
 
-``django-vanityurls`` works via a Django middleware. The middleware intercepts the HTTP response once your views have executed. In the event of a 404 (page not found) error response, the middleware attempts to find a ``VanityUrl`` model object matching the requested path. If a match is found, a 301 permanent redirect is issued, directing the client to the longer, canonical URL.
+``django-vanityurls`` works via a Django middleware. The middleware intercepts the HTTP response once your views have executed. In the event of a 404 (page not found) error response, the middleware attempts to find a ``VanityUrl`` model object matching the requested path. If a match is found, a redirect with a chosen HTTP response code is issued, directing the client to the longer, canonical URL.
 
 In this way, ``django-vanityurls`` will only query the database in the event of a 404, rather than on every request. This also means that it requires minimal configuration: for example, your ``urls.py`` need not be modified at all.
 
@@ -59,7 +59,7 @@ There are two changes to make to your project's ``settings.py``:
 Database Migration
 ~~~~~~~~~~~~~~~~~~
 
-Apply the database migration to create the table needed by ``django-vanityurls``:
+Apply the database migration to create the tables needed by ``django-vanityurls``:
 
 
 .. code-block:: console
