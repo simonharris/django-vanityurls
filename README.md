@@ -1,5 +1,7 @@
 # django-vanityurls
 
+[![PyPI version](https://img.shields.io/pypi/v/django_vanityurls.svg)](https://pypi.org/project/django_vanityurls/)
+
 django-vanityurls is a Python + Django app to enable configuring short, memorable vanity URLs for a Web project via the Django admin.
 
 ## Installation
